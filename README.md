@@ -1,6 +1,6 @@
 ## cron-firebase
 
-Testing upddating firestore via github actions cron.
+Testing updating a Firestore collection using a CRON job running on github actions.
 
 ### Requirements
 

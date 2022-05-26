@@ -1,5 +1,5 @@
 # .github/workflows/scheduled-builds.yml
-name: Scrape and Update
+name: Scrape and Update on a CRON Schedule
 
 on:
   schedule:
