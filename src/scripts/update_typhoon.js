@@ -5,6 +5,7 @@ const main = async () => {
   let successCount = 0
 
   try {
+    // Scrape data
     data = await scrapetyphooninfo()
     successCount += 1
     console.log('Scrapping success.')
@@ -13,15 +14,14 @@ const main = async () => {
   }
 
   if (data) {
-    const obj = {
-      img: data.images[0],
-      description: data.descriptions.join(' '),
-      reference: data.url,
-      updated_by: 'system'
-    }
-  
     try {
-      await settyphooninformation(obj)
+      // Upload scrated data to Firestore
+      await settyphooninformation({
+        img: data.images[0],
+        description: data.descriptions.join(' '),
+        reference: data.url,
+        updated_by: 'system'
+      })
       successCount += 1
       console.log('Firestore update success.')
     } catch (err) {
