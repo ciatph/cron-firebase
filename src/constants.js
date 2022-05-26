@@ -1,7 +1,5 @@
 const FIRESTORE_COLLECTIONS = {
-  WEATHER_FORECAST: 'weather_forecasts',
-  SERVICES: 'w_services',
-  SEASONAL: 'seasonal'
+  SERVICES: 'delete_me',
 }
 
 const FIRESTORE_DOCUMENTS = {

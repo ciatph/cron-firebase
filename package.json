@@ -4,7 +4,8 @@
   "description": "Testing upddating firestore via github actions cron.",
   "main": "index.js",
   "scripts": {
-    "start": "node src/scripts/update_typhoon.js"
+    "start": "node src/scripts/update_typhoon.js",
+    "scrape": "node src/scripts/scrape.js"
   },
   "repository": {
     "type": "git",
