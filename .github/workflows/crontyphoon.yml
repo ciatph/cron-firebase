@@ -1,0 +1,14 @@
+# .github/workflows/scheduled-builds.yml
+name: Scrape and Update
+
+on:
+  schedule:
+    # Runs "At every 5th minute."
+    - cron: '*/5 * * * *'
+jobs:
+  runscript:
+    name: Say Hello
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hellooo
+        run: echo "Hello, world!"
