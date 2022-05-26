@@ -1,0 +1,25 @@
+{
+  "name": "cron-firebase",
+  "version": "1.0.0",
+  "description": "Testing upddating firestore via github actions cron.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/scripts/update_typhoon.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciatph/cron-firebase.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ciatph/cron-firebase/issues"
+  },
+  "homepage": "https://github.com/ciatph/cron-firebase#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11",
+    "dotenv": "^16.0.0",
+    "firebase-admin": "^10.0.2"
+  }
+}
