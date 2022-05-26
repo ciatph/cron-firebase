@@ -5,6 +5,7 @@ on:
   schedule:
     # Runs "At every 5th minute."
     - cron: '*/5 * * * *'
+
 jobs:
   runscript:
     name: Scrape and Update Firestore
