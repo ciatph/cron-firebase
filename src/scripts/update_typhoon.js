@@ -29,6 +29,8 @@ const main = async () => {
     }
   }
 
+  successCount = 0
+
   if (successCount !== 2) {
     // TO-DO: Send email notification
     const errMsg = 'Something went wrong.'
