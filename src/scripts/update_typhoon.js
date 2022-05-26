@@ -2,14 +2,14 @@ const { scrapetyphooninfo, settyphooninformation } = require('../classes/typhoon
 
 const main = async () => {
   let data
-  let error = false
+  let successCount = 0
 
   try {
     data = await scrapetyphooninfo()
+    successCount += 1
     console.log('Scrapping success.')
   } catch (err) {
-    console.log(err.message)
-    error = true
+    console.log(`[ERROR]: ${err.message}`)
   }
 
   if (data) {
@@ -22,15 +22,17 @@ const main = async () => {
   
     try {
       await settyphooninformation(obj)
-      console.log('Firestore update done')
+      successCount += 1
+      console.log('Firestore update success.')
     } catch (err) {
-      console.log(err.message)
-      error = true
+      console.log(`[ERROR]: ${err.message}`)
     }
   }
 
-  if (error) {
+  if (successCount !== 2) {
     // TO-DO: Send email notification
+    const errMsg = 'Something went wrong.'
+    throw new Error(errMsg)
   }
 }
 
