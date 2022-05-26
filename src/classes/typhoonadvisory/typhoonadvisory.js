@@ -57,9 +57,8 @@ class TyphoonAdvisory {
   /**
    * Set (overwrite) the typhoon advisory information
    * @param {Object} data
-   * @param {String} user - Generic updater username: 'admin' for all users, 'system' if cron
    */
-  async settyphooninformation (data, user = 'admin') {
+  async settyphooninformation (data) {
     try {
       const docRef = await db.collection(FIRESTORE_COLLECTIONS.SERVICES)
         .doc(FIRESTORE_DOCUMENTS.TYPHOON_ADVISORY)
@@ -67,7 +66,7 @@ class TyphoonAdvisory {
           img: data.img,
           description: data.description,
           source: data.reference,
-          updated_by: user,
+          updated_by: data.updated_by ?? 'admin',
           date_updated: admin.firestore.Timestamp.now(),
         })
       return docRef
