@@ -3,8 +3,8 @@ name: Scrape and Update on a CRON Schedule
 
 on:
   schedule:
-    # Runs "At minute 0 past every hour."
-    - cron: '0 */1 * * *'
+    # Runs "At minute 0 past every 5th hour."
+    - cron: '0 */5 * * *'
 
 jobs:
   runscript:
