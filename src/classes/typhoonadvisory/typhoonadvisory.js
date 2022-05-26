@@ -33,14 +33,16 @@ class TyphoonAdvisory {
         const anchor = $(this)
   
         if (anchor.text().trim() === titleHook) {
-          $(anchor[0].parent).find('p').map(function () {
-            obj.descriptions.push($(this).text().trim())
-          })
-  
-          $(anchor[0].parent).find('img').map(function () {
-            obj.images.push($(this)[0].attribs.src)
-          })        
+          obj.descriptions = $(anchor[0].parent).find('p').map(function () {
+            return $(this).text().trim()
+          }).toArray()
+
+          obj.images = $(anchor[0].parent).find('img').map(function () {
+            return $(this)[0].attribs.src
+          }).toArray()
         }
+
+        return true
       })
     } catch (err) {
       console.log(err.message)

@@ -24,6 +24,7 @@ const main = async () => {
       })
       successCount += 1
       console.log('Firestore update success.')
+      console.log(JSON.stringify(data))
     } catch (err) {
       console.log(`[ERROR]: ${err.message}`)
     }

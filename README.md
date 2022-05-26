@@ -26,7 +26,7 @@ Testing updating a Firestore collection using a CRON job running on github actio
 
 ## Usage
 
-1. Run any of the aavailable `npm scripts` on **Available Scripts**.
+1. Run any of the available `npm scripts` on **Available Scripts**.
 
 ## Available Scripts
 
