@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/scripts/update_typhoon.js",
-    "scrape": "node src/scripts/scrape.js"
+    "scrape": "node src/scripts/scrape.js",
+    "test": "node src/scripts/test.js"
   },
   "repository": {
     "type": "git",

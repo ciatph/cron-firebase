@@ -1,0 +1,33 @@
+name: Testing Secrets
+
+on: [push, pull_request]:
+  branches:
+    - '*'
+
+jobs:
+  lint-app:
+    name: Testing Secrets
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v1
+
+      - name: Use NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+
+      - name: Install Dependencies and lint
+        run: |
+          npm install
+          npm run lint

@@ -76,6 +76,17 @@ class TyphoonAdvisory {
       throw new Error(err.message)
     }
   }
+
+  async fetchdata () {
+    try {
+      const docRef = await db.collection(FIRESTORE_COLLECTIONS.SERVICES)
+        .doc(FIRESTORE_DOCUMENTS.TYPHOON_ADVISORY)
+        .get()
+      return docRef
+    } catch (err) {
+      throw new Error(err.message)
+    }
+  }
 }
 
 module.exports = TyphoonAdvisory
